@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Landin Enterprise Group LLC | Business Funding & Capital Access | Bellevue, WA</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue:#1D4ED8;
+  --blue-bright:#3B82F6;
+  --gold:#D97706;
+  --gold-bright:#F59E0B;
+  --teal:#0D9488;
+  --dark:#020410;
+  --card:#060C20;
+  --blue-glow:rgba(29,78,216,0.18);
+  --gold-glow:rgba(245,158,11,0.15);
+}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:#fff;font-family:'Inter',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ATTR BAR */
+.attr{background:rgba(29,78,216,0.09);border-bottom:1px solid rgba(29,78,216,0.25);padding:8px 24px;text-align:center;font-size:12px;color:#93C5FD;font-weight:600}
+.attr a{color:#93C5FD;text-decoration:none}
+
+/* NAV */
+nav{position:fixed;top:33px;left:0;right:0;z-index:100;padding:0 52px;height:70px;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s}
+nav.scrolled{background:rgba(2,4,16,0.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(29,78,216,0.2);top:0}
+.logo{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;letter-spacing:-0.4px;color:#fff;line-height:1.2}
+.logo span{background:linear-gradient(135deg,#60A5FA,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.logo small{display:block;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.32);font-family:'Inter',sans-serif}
+.nav-links{display:flex;gap:30px}
+.nav-links a{font-size:14px;font-weight:500;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:#93C5FD}
+.nav-cta{background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;font-size:13px;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none;box-shadow:0 4px 20px rgba(29,78,216,0.35);transition:transform 0.2s,box-shadow 0.2s;white-space:nowrap}
+.nav-cta:hover{transform:scale(1.04);box-shadow:0 6px 28px rgba(29,78,216,0.55)}
+@media(max-width:900px){.nav-links{display:none}.logo small{display:none}}
+@media(max-width:600px){nav{padding:0 20px}}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center;will-change:transform}
+.hero-ov{position:absolute;inset:0;background:linear-gradient(110deg,rgba(2,4,16,0.96) 55%,rgba(2,4,16,0.65))}
+.hero-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(29,78,216,0.15),transparent 70%);top:-120px;right:-80px;pointer-events:none}
+.hero-orb2{position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,0.07),transparent 70%);bottom:-60px;right:28%;pointer-events:none}
+.hero-content{position:relative;z-index:1;padding:80px 64px 0;max-width:740px}
+@media(max-width:768px){.hero-content{padding:88px 24px 0}}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(29,78,216,0.12);border:1px solid rgba(29,78,216,0.4);color:#93C5FD;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 16px;border-radius:100px;margin-bottom:22px;animation:fadeUp 0.9s ease both}
+h1{font-family:'Syne',sans-serif;font-size:clamp(42px,5.8vw,78px);font-weight:800;letter-spacing:-2px;line-height:1.03;margin-bottom:22px;animation:fadeUp 0.9s 0.15s ease both}
+h1 .grad{background:linear-gradient(135deg,#60A5FA,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:17px;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:38px;max-width:520px;animation:fadeUp 0.9s 0.3s ease both}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px;animation:fadeUp 0.9s 0.45s ease both}
+.btn-p{background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;font-size:15px;font-weight:700;padding:16px 32px;border-radius:10px;text-decoration:none;box-shadow:0 8px 28px rgba(29,78,216,0.4);transition:all 0.2s}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(29,78,216,0.55)}
+.btn-s{background:transparent;color:#fff;font-size:15px;font-weight:600;padding:16px 28px;border-radius:10px;border:1px solid rgba(255,255,255,0.14);text-decoration:none;transition:border-color 0.2s}
+.btn-s:hover{border-color:rgba(96,165,250,0.5)}
+.hero-proof{display:flex;gap:36px;flex-wrap:wrap;animation:fadeUp 0.9s 0.55s ease both}
+.hp-val{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;background:linear-gradient(135deg,#60A5FA,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.hp-lbl{font-size:11px;color:rgba(255,255,255,0.38);margin-top:3px}
+
+/* STATS BAND */
+.stats-band{background:linear-gradient(90deg,rgba(29,78,216,0.08),rgba(13,148,136,0.06));border-top:1px solid rgba(29,78,216,0.12);border-bottom:1px solid rgba(29,78,216,0.12);padding:26px 64px;display:flex;justify-content:center;gap:0;flex-wrap:wrap}
+@media(max-width:768px){.stats-band{padding:20px 24px;gap:0}}
+.sb-item{text-align:center;padding:10px 40px;border-right:1px solid rgba(29,78,216,0.15)}
+.sb-item:last-child{border-right:none}
+@media(max-width:600px){.sb-item{border-right:none;border-bottom:1px solid rgba(29,78,216,0.1);padding:12px 20px;width:100%}}
+.sb-num{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;background:linear-gradient(135deg,#60A5FA,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:0.5px;text-transform:uppercase}
+.sb-lbl{font-size:11px;color:rgba(255,255,255,0.35);margin-top:3px}
+
+/* SECTIONS */
+.sec{padding:100px 64px}
+@media(max-width:768px){.sec{padding:64px 24px}}
+.sec-tag{display:inline-block;background:rgba(29,78,216,0.1);border:1px solid rgba(29,78,216,0.28);color:#93C5FD;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:12px}
+.sec-tag.gold{background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.25);color:#FCD34D}
+.sec-tag.teal{background:rgba(13,148,136,0.08);border-color:rgba(13,148,136,0.25);color:#5EEAD4}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(30px,4.2vw,50px);font-weight:800;letter-spacing:-1.5px;margin-bottom:10px}
+.sec-sub{font-size:15px;color:rgba(255,255,255,0.42);line-height:1.7;margin-bottom:48px;max-width:540px}
+
+/* ABOUT */
+.about-sec{background:#040914;border-top:1px solid rgba(29,78,216,0.1);border-bottom:1px solid rgba(29,78,216,0.1)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:40px}}
+.founder-card{background:var(--card);border:1px solid rgba(29,78,216,0.18);border-radius:16px;overflow:hidden}
+.founder-img{height:380px;overflow:hidden;background:linear-gradient(135deg,rgba(29,78,216,0.2),rgba(13,148,136,0.2));display:flex;align-items:center;justify-content:center}
+.founder-img img{width:100%;height:100%;object-fit:cover;object-position:top}
+.founder-placeholder{font-size:80px;opacity:0.3}
+.founder-info{padding:24px}
+.founder-name{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;letter-spacing:-0.5px;margin-bottom:4px}
+.founder-title{font-size:12px;color:#93C5FD;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.founder-bio{font-size:13.5px;color:rgba(255,255,255,0.52);line-height:1.7}
+.about-right{}
+.about-right h2{font-family:'Syne',sans-serif;font-size:clamp(28px,3.8vw,46px);font-weight:800;letter-spacing:-1.5px;margin-bottom:16px;line-height:1.05}
+.about-right h2 .grad{background:linear-gradient(135deg,#60A5FA,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.about-right p{font-size:15px;color:rgba(255,255,255,0.52);line-height:1.75;margin-bottom:32px}
+.diff-list{display:flex;flex-direction:column;gap:14px}
+.diff-item{display:flex;align-items:flex-start;gap:14px;background:rgba(29,78,216,0.05);border:1px solid rgba(29,78,216,0.12);border-radius:12px;padding:16px 18px}
+.diff-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#3B82F6,#0D9488);flex-shrink:0;margin-top:6px}
+.diff-item span{font-size:13.5px;color:rgba(255,255,255,0.6);line-height:1.6}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:900px){
+  .services-grid{grid-template-columns:1fr}
+  .services-grid .srv{grid-column:1 !important}
+  .srv-full{grid-column:1 !important}
+}
+.srv{background:var(--card);border:1px solid rgba(29,78,216,0.14);border-radius:16px;padding:26px 24px;transition:all 0.35s;position:relative;overflow:hidden}
+.srv::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--teal));opacity:0;transition:opacity 0.3s}
+.srv:hover{transform:translateY(-5px);border-color:rgba(29,78,216,0.4);box-shadow:0 20px 50px rgba(29,78,216,0.15)}
+.srv:hover::before{opacity:1}
+.srv.core{border-color:rgba(245,158,11,0.25);background:linear-gradient(135deg,rgba(6,12,32,1),rgba(30,20,5,0.6))}
+.srv.core::before{background:linear-gradient(90deg,#D97706,#F59E0B);opacity:1}
+.srv-icon{font-size:28px;margin-bottom:14px;display:block}
+.srv h3{font-family:'Syne',sans-serif;font-size:17px;font-weight:700;margin-bottom:8px;letter-spacing:-0.3px}
+.srv p{font-size:13px;color:rgba(255,255,255,0.48);line-height:1.65;margin-bottom:14px}
+.srv-badge{display:inline-block;background:rgba(29,78,216,0.1);border:1px solid rgba(29,78,216,0.28);color:#93C5FD;font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;letter-spacing:0.5px;text-transform:uppercase}
+.srv-badge.gold{background:rgba(245,158,11,0.1);border-color:rgba(245,158,11,0.3);color:#FCD34D}
+/* Full-width core service card at top */
+.srv-span2{grid-column:span 2}
+.srv-full{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:start}
+@media(max-width:600px){
+  .srv-full{grid-template-columns:1fr}
+  .srv.core{padding:16px 14px}
+  .srv.core .srv-icon{font-size:20px;margin-bottom:6px}
+  .srv.core h3{font-size:15px;margin-bottom:6px}
+  .srv.core p{font-size:12px;line-height:1.5;margin-bottom:10px}
+  .srv.core .srv-badge.gold{font-size:9px;padding:2px 8px}
+  .srv.core div[style]{gap:6px !important}
+}
+
+/* WHO WE SERVE */
+.serve-sec{background:#040914;border-top:1px solid rgba(29,78,216,0.1);border-bottom:1px solid rgba(29,78,216,0.1)}
+.serve-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.serve-tag{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:8px;padding:10px 18px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.55);transition:all 0.2s}
+.serve-tag:hover{background:rgba(29,78,216,0.1);border-color:rgba(29,78,216,0.3);color:#93C5FD}
+
+/* PROCESS */
+.process-sec{}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;position:relative;margin-top:44px}
+@media(max-width:1100px){.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.steps{grid-template-columns:1fr}}
+.step{background:var(--card);border:1px solid rgba(29,78,216,0.12);border-radius:14px;padding:26px 22px;transition:border-color 0.2s,transform 0.3s}
+.step:hover{border-color:rgba(29,78,216,0.35);transform:translateY(-4px)}
+.step-num{font-family:'Syne',sans-serif;font-size:38px;font-weight:800;background:linear-gradient(135deg,#1D4ED8,#0D9488);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:10px}
+.step h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:7px}
+.step p{font-size:12.5px;color:rgba(255,255,255,0.45);line-height:1.65}
+
+/* CREDIBILITY */
+.cred-sec{background:#040914;border-top:1px solid rgba(29,78,216,0.1);border-bottom:1px solid rgba(29,78,216,0.1)}
+.cred-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:36px}
+@media(max-width:768px){.cred-grid{grid-template-columns:1fr}}
+.cred-item{background:var(--card);border:1px solid rgba(29,78,216,0.12);border-radius:12px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start;transition:border-color 0.2s,transform 0.3s}
+.cred-item:hover{border-color:rgba(29,78,216,0.32);transform:translateY(-3px)}
+.cred-check{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,rgba(29,78,216,0.2),rgba(13,148,136,0.2));border:1px solid rgba(29,78,216,0.3);display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;margin-top:1px}
+.cred-item span{font-size:13.5px;color:rgba(255,255,255,0.6);line-height:1.6}
+
+/* CONTACT */
+.contact-sec{padding:100px 64px}
+@media(max-width:768px){.contact-sec{padding:64px 24px}}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:44px}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.contact-info{display:flex;flex-direction:column;gap:16px}
+.contact-row{display:flex;align-items:flex-start;gap:16px;background:var(--card);border:1px solid rgba(29,78,216,0.14);border-radius:12px;padding:18px 20px;transition:border-color 0.2s}
+.contact-row:hover{border-color:rgba(29,78,216,0.3)}
+.contact-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+.contact-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:3px}
+.contact-val{font-size:14px;font-weight:600;color:#fff}
+.contact-val a{color:#93C5FD;text-decoration:none}
+.contact-val a:hover{text-decoration:underline}
+.contact-form{background:var(--card);border:1px solid rgba(29,78,216,0.18);border-radius:16px;padding:32px}
+.contact-form h3{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;margin-bottom:6px}
+.contact-form p{font-size:13px;color:rgba(255,255,255,0.42);margin-bottom:24px;line-height:1.6}
+.form-row{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.form-row label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.38)}
+.form-row input,.form-row select,.form-row textarea{background:rgba(255,255,255,0.04);border:1px solid rgba(29,78,216,0.2);border-radius:8px;padding:12px 14px;font-size:14px;color:#fff;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s;resize:none}
+.form-row input::placeholder,.form-row textarea::placeholder{color:rgba(255,255,255,0.22)}
+.form-row input:focus,.form-row select:focus,.form-row textarea:focus{border-color:rgba(59,130,246,0.5)}
+.form-row select option{background:#0d1a3a;color:#fff}
+.form-submit{width:100%;background:linear-gradient(135deg,var(--blue),var(--teal));color:#fff;font-size:15px;font-weight:700;padding:15px;border-radius:10px;border:none;cursor:pointer;box-shadow:0 6px 22px rgba(29,78,216,0.35);transition:all 0.2s;margin-top:4px}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(29,78,216,0.5)}
+
+/* CTA */
+.cta-sec{padding:108px 64px;text-align:center;position:relative;overflow:hidden}
+@media(max-width:768px){.cta-sec{padding:72px 24px}}
+.cta-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(29,78,216,0.14),transparent 65%);pointer-events:none}
+.cta-glow2{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:200px;background:radial-gradient(ellipse,rgba(245,158,11,0.06),transparent 65%);pointer-events:none}
+.cta-sec h2{font-family:'Syne',sans-serif;font-size:clamp(36px,5.5vw,66px);font-weight:800;letter-spacing:-2px;margin-bottom:16px;position:relative;line-height:1.05}
+.cta-sec h2 .grad{background:linear-gradient(135deg,#60A5FA,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cta-sec p{font-size:17px;color:rgba(255,255,255,0.46);margin-bottom:36px;position:relative;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-note{font-size:12px;color:rgba(255,255,255,0.26);margin-top:16px;position:relative}
+
+/* FOOTER */
+footer{background:#020810;border-top:1px solid rgba(29,78,216,0.1);padding:36px 64px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start}
+@media(max-width:768px){footer{padding:28px 24px;grid-template-columns:1fr}}
+.footer-left{}
+.footer-logo{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;margin-bottom:6px}
+.footer-logo span{background:linear-gradient(135deg,#60A5FA,#F59E0B);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.footer-tagline{font-size:12px;color:rgba(255,255,255,0.3);margin-bottom:14px}
+.footer-contact{display:flex;flex-direction:column;gap:5px}
+.footer-contact a{font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none;transition:color 0.2s}
+.footer-contact a:hover{color:#93C5FD}
+.footer-right{text-align:right;display:flex;flex-direction:column;gap:6px}
+@media(max-width:768px){.footer-right{text-align:left}}
+.footer-right span{font-size:12px;color:rgba(255,255,255,0.22)}
+.footer-right a{color:#93C5FD;font-weight:600;text-decoration:none;font-size:12px}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.72s ease,transform 0.72s ease}
+.reveal.on{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+</style>
+</head>
+<body>
+
+<!-- Attribution Bar -->
+<div class="attr">🏢 Website designed &amp; built by <a href="#">LaunchSite Co.</a> · launchsite.code.net</div>
+
+<!-- Navigation -->
+<nav id="nav">
+  <div class="logo">
+    Landin Enterprise Group <span>LLC</span>
+    <small>Business Funding &amp; Capital Access · Bellevue, WA</small>
+  </div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Free Consultation →</a>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">💼 Capital Access · Our Core Specialty</div>
+    <h1>Your business<br>deserves <span class="grad">real capital.</span></h1>
+    <p class="hero-sub">Whether you are launching a new venture or scaling an existing one, we help you identify, qualify for, and secure the funding you need. Backed by hands-on experience from someone who has done it themselves.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-p">Schedule a Free Consultation →</a>
+      <a href="#services" class="btn-s">See Our Services</a>
+    </div>
+    <div class="hero-proof">
+      <div><div class="hp-val">4+</div><div class="hp-lbl">Years in Business</div></div>
+      <div><div class="hp-val">3+</div><div class="hp-lbl">LLCs Formed by Founder</div></div>
+      <div><div class="hp-val">5★</div><div class="hp-lbl">Client Satisfaction</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ STATS BAND ═══════════════ -->
+<div class="stats-band">
+  <div class="sb-item">
+    <div class="sb-num">💰 Capital Access</div>
+    <div class="sb-lbl">Our Core Specialty</div>
+  </div>
+  <div class="sb-item">
+    <div class="sb-num">🏢 Full-Service</div>
+    <div class="sb-lbl">Business Support</div>
+  </div>
+  <div class="sb-item">
+    <div class="sb-num">🚀 Startups</div>
+    <div class="sb-lbl">Day One Ready</div>
+  </div>
+  <div class="sb-item">
+    <div class="sb-num">📈 Established</div>
+    <div class="sb-lbl">Businesses Ready to Scale</div>
+  </div>
+</div>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section class="sec about-sec" id="about">
+  <div class="about-grid">
+    <div class="founder-card reveal">
+      <div class="founder-img">
+        <img src="steven.jpg" alt="Steven Carreon Landin, Founder" loading="lazy">
+      </div>
+      <div class="founder-info">
+        <div class="founder-name">Steven Carreon Landin</div>
+        <div class="founder-title">Founder &amp; Lead Consultant</div>
+        <p class="founder-bio">Steven has 4+ years of experience in business consulting, entity formation, and capital strategy. Having personally founded and operated multiple LLCs across different industries, he brings practical, real-world insight to every client relationship. Born as a first-generation immigrant in Seattle, WA, Steven built his consulting career from the ground up, learning through experience what no one ever taught him: how to structure a business, access capital, and navigate a system not designed with newcomers in mind. He founded Landin Enterprise Group with one mission: to make sure other business owners never have to figure it out alone.</p>
+      </div>
+    </div>
+    <div class="about-right reveal d1">
+      <div class="sec-tag">About Us</div>
+      <h2>Built by a Business Owner,<br>for <span class="grad">Business Owners.</span></h2>
+      <p>Our firm was built on a simple belief: every business owner deserves access to the tools, resources, and capital that large corporations take for granted. We bring real hands-on experience to every client engagement, having personally formed and operated multiple LLCs, navigated business banking relationships, and helped entrepreneurs at every stage unlock the resources they need to grow.</p>
+      <div class="diff-list">
+        <div class="diff-item"><div class="diff-dot"></div><span>We have been in the owner's seat. We have built businesses ourselves, not just advised on them.</span></div>
+        <div class="diff-item"><div class="diff-dot"></div><span>We personally formed and managed 3+ LLCs, so we understand entity structure, compliance, and banking requirements inside and out.</span></div>
+        <div class="diff-item"><div class="diff-dot"></div><span>We specialize in capital access because we know firsthand how hard it is to get a yes from a lender.</span></div>
+        <div class="diff-item"><div class="diff-dot"></div><span>We act as your complete business infrastructure partner, not a one-service vendor.</span></div>
+        <div class="diff-item"><div class="diff-dot"></div><span>We serve both startups launching from zero and established businesses ready to scale.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SERVICES ═══════════════ -->
+<section class="sec" id="services">
+  <div class="sec-tag reveal">Services</div>
+  <h2 class="sec-title reveal">Full-Service<br>Business Consulting.</h2>
+  <p class="sec-sub reveal">We remove the roadblocks holding your business back. Whether that is access to capital, a stalled growth strategy, ineffective advertising, or operational bottlenecks, we are the one partner that handles it all.</p>
+
+  <div class="services-grid">
+
+    <!-- CORE SPECIALTY — full width -->
+    <div class="srv core srv-full reveal">
+      <div>
+        <span class="srv-icon">💰</span>
+      </div>
+      <div>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+          <h3 style="margin:0">Capital Access &amp; Funding</h3>
+          <div class="srv-badge gold">⭐ Core Specialty</div>
+        </div>
+        <p style="max-width:640px;margin-bottom:14px">We help businesses identify and secure the capital they need through SBA loans, business lines of credit, alternative lending, and investor introductions. We guide you through the full process: building your business profile, preparing documentation, and connecting you with the right lenders.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span class="srv-badge gold">SBA Loans</span>
+          <span class="srv-badge gold">Business Lines of Credit</span>
+          <span class="srv-badge gold">Alternative Lending</span>
+          <span class="srv-badge gold">Investor Introductions</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="srv reveal">
+      <span class="srv-icon">🏛️</span>
+      <h3>LLC Formation &amp; Business Setup</h3>
+      <p>End-to-end LLC formation: name registration, articles of organization, EIN acquisition, operating agreements, and business banking setup. We have successfully formed 3+ LLCs and know every step of the process.</p>
+      <div class="srv-badge">EIN · Banking · Compliance</div>
+    </div>
+
+    <div class="srv reveal d1">
+      <span class="srv-icon">🗺️</span>
+      <h3>Strategic Business Planning</h3>
+      <p>Custom roadmaps that help businesses define goals, eliminate bottlenecks, and grow with intention. Whether you are a startup or an established company hitting a plateau, we create a strategy built around your specific situation.</p>
+      <div class="srv-badge">No Cookie-Cutter Plans</div>
+    </div>
+
+    <div class="srv reveal d2">
+      <span class="srv-icon">⚙️</span>
+      <h3>Operations &amp; Bottleneck Removal</h3>
+      <p>We step in wherever your business is stuck. Sales process, staffing, vendor relationships, systems. We identify the friction and remove it so your business can move forward.</p>
+      <div class="srv-badge">Sales · Systems · Staffing</div>
+    </div>
+
+    <div class="srv reveal d3 srv-span2">
+      <span class="srv-icon">📊</span>
+      <h3>Financial Management Consulting</h3>
+      <p>Budgeting, cash flow planning, expense optimization, and financial readiness for lending. We help your numbers tell the right story to banks and investors.</p>
+      <div class="srv-badge">Bank-Ready Financials</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ WHO WE SERVE ═══════════════ -->
+<section class="sec serve-sec">
+  <div class="sec-tag teal reveal">Who We Serve</div>
+  <h2 class="sec-title reveal">We work with businesses<br>at every stage.</h2>
+  <p class="sec-sub reveal" style="margin-bottom:0">From day-one startups to established companies ready to grow. If you need capital, structure, or strategy, we are your partner.</p>
+  <div class="serve-tags">
+    <div class="serve-tag reveal">🚀 Startups</div>
+    <div class="serve-tag reveal d1">🛍️ Retail Businesses</div>
+    <div class="serve-tag reveal d2">🍽️ Restaurants</div>
+    <div class="serve-tag reveal d3">💻 E-Commerce</div>
+    <div class="serve-tag reveal">🏠 Real Estate</div>
+    <div class="serve-tag reveal d1">🤝 Service Businesses</div>
+    <div class="serve-tag reveal d2">🔨 Contractors</div>
+    <div class="serve-tag reveal d3">🏥 Healthcare Practices</div>
+  </div>
+</section>
+
+<!-- ═══════════════ PROCESS ═══════════════ -->
+<section class="sec" id="process">
+  <div class="sec-tag reveal">Our Process</div>
+  <h2 class="sec-title reveal">How We Work.</h2>
+  <p class="sec-sub reveal">We follow a structured, proven process to deliver real results for every client, from the first conversation to measurable growth.</p>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-num">01</div>
+      <h3>Discovery</h3>
+      <p>We learn your business: your goals, challenges, financials, and current situation. No assumptions, just listening.</p>
+    </div>
+    <div class="step reveal d1">
+      <div class="step-num">02</div>
+      <h3>Assessment</h3>
+      <p>We identify the gaps, bottlenecks, and opportunities specific to your business. We pinpoint exactly where you are losing money or momentum.</p>
+    </div>
+    <div class="step reveal d2">
+      <div class="step-num">03</div>
+      <h3>Strategy</h3>
+      <p>We build a custom action plan tailored to your goals and timeline. Every plan is unique, no cookie-cutter solutions.</p>
+    </div>
+    <div class="step reveal d3">
+      <div class="step-num">04</div>
+      <h3>Execution</h3>
+      <p>We implement alongside you, whether that is applying for capital, forming your LLC, launching ads, or fixing operations.</p>
+    </div>
+    <div class="step reveal d4">
+      <div class="step-num">05</div>
+      <h3>Results &amp; Growth</h3>
+      <p>We measure outcomes and adjust the strategy to keep your business moving forward. Your success is our track record.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CREDIBILITY ═══════════════ -->
+<section class="sec cred-sec">
+  <div class="sec-tag gold reveal">Credibility</div>
+  <h2 class="sec-title reveal">Proven Experience<br>You Can Count On.</h2>
+  <p class="sec-sub reveal" style="margin-bottom:0">We do not just consult. We have lived it. Here is what we bring to every client engagement.</p>
+  <div class="cred-grid">
+    <div class="cred-item reveal">
+      <div class="cred-check">✓</div>
+      <span>3+ LLCs personally formed and operated by the founder across multiple industries</span>
+    </div>
+    <div class="cred-item reveal d1">
+      <div class="cred-check">✓</div>
+      <span>Experience navigating SBA lending, business credit, and alternative capital sources firsthand</span>
+    </div>
+    <div class="cred-item reveal">
+      <div class="cred-check">✓</div>
+      <span>Hands-on background in business entity formation, compliance, and banking requirements</span>
+    </div>
+    <div class="cred-item reveal d1">
+      <div class="cred-check">✓</div>
+      <span>Active consulting practice serving clients in the greater Seattle / Bellevue, WA area</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<section class="contact-sec" id="contact">
+  <div class="sec-tag teal reveal">Contact</div>
+  <h2 class="sec-title reveal">About Your Business.</h2>
+  <p class="sec-sub reveal">Whether you need capital, a strategy, or just do not know where to start, we do. Reach out today for a free consultation.</p>
+  <div class="contact-grid">
+
+    <div class="contact-info">
+      <div class="contact-row reveal">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-val"><a href="tel:8443526346">844-352-6346</a></div>
+        </div>
+      </div>
+      <div class="contact-row reveal d1">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-val"><a href="mailto:Info@landinenterprise.com">Info@landinenterprise.com</a></div>
+        </div>
+      </div>
+      <div class="contact-row reveal d2">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-label">Address</div>
+          <div class="contact-val">14205 SE 36th Street, Suite 100<br>Bellevue, WA 98006</div>
+        </div>
+      </div>
+      <div class="contact-row reveal d3">
+        <div class="contact-icon">🏢</div>
+        <div>
+          <div class="contact-label">Business</div>
+          <div class="contact-val">Landin Enterprise Group LLC</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form reveal d1">
+      <h3>Get Your Free Consultation</h3>
+      <p>Tell us about your business and we will reach out to schedule a free strategy call.</p>
+      <div class="form-row">
+        <label>Your Name</label>
+        <input type="text" placeholder="John Smith">
+      </div>
+      <div class="form-row">
+        <label>Business Name</label>
+        <select id="bizToggle" onchange="toggleBizName(this)">
+          <option value="yes">I have a business name</option>
+          <option value="na">N/A — I don't have one yet</option>
+        </select>
+        <input type="text" id="bizNameInput" placeholder="Your Business LLC" style="margin-top:8px">
+      </div>
+      <div class="form-row">
+        <label>Phone / Email</label>
+        <input type="text" placeholder="(555) 000-0000 or email@company.com">
+      </div>
+      <div class="form-row">
+        <label>What do you need help with?</label>
+        <select>
+          <option value="" disabled selected>Select a service...</option>
+          <option>Capital Access &amp; Funding</option>
+          <option>LLC Formation &amp; Business Setup</option>
+          <option>Strategic Business Planning</option>
+          <option>Operations &amp; Bottleneck Removal</option>
+          <option>Financial Management Consulting</option>
+          <option>Not sure, I need guidance</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>Anything else we should know?</label>
+        <textarea rows="3" placeholder="Brief description of your situation..."></textarea>
+      </div>
+      <button class="form-submit">Send My Request →</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="cta-sec">
+  <div class="cta-glow"></div>
+  <div class="cta-glow2"></div>
+  <div class="sec-tag reveal" style="margin-bottom:20px">Get Started Today</div>
+  <h2 class="reveal">Your breakthrough<br>is one call <span class="grad">away.</span></h2>
+  <p class="reveal">Book a free consultation and find out exactly what it will take to get your business funded and moving forward.</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative">
+    <a href="tel:8443526346" class="btn-p reveal">📞 Call 844-352-6346 →</a>
+    <a href="mailto:Info@landinenterprise.com" class="btn-s reveal d1">✉️ Email Us</a>
+  </div>
+  <div class="cta-note reveal">Landin Enterprise Group LLC · 14205 SE 36th Street, Suite 100, Bellevue, WA 98006</div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="footer-left">
+    <div class="footer-logo">Landin Enterprise Group <span>LLC</span></div>
+    <div class="footer-tagline">Business Funding &amp; Capital Access · Bellevue, WA</div>
+    <div class="footer-contact">
+      <a href="tel:8443526346">📞 844-352-6346</a>
+      <a href="mailto:Info@landinenterprise.com">✉️ Info@landinenterprise.com</a>
+      <a href="#">📍 14205 SE 36th Street, Suite 100, Bellevue, WA 98006</a>
+    </div>
+  </div>
+  <div class="footer-right">
+    <span>Built by <a href="#">LaunchSite Co.</a></span>
+    <span>© 2026 Landin Enterprise Group LLC</span>
+    <span>All rights reserved.</span>
+  </div>
+</footer>
+
+<script>
+// Parallax + nav scroll
+window.addEventListener('scroll',()=>{
+  const s=window.scrollY;
+  document.getElementById('heroBg').style.transform=`translateY(${s*0.26}px)`;
+  document.getElementById('nav').classList.toggle('scrolled',s>20);
+},{passive:true});
+
+// Scroll reveal
+const io=new IntersectionObserver(e=>e.forEach(x=>{
+  if(x.isIntersecting){x.target.classList.add('on');}
+}),{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Business name toggle
+function toggleBizName(sel){
+  const inp = document.getElementById('bizNameInput');
+  if(sel.value === 'na'){
+    inp.value = 'N/A';
+    inp.disabled = true;
+    inp.style.display = 'none';
+  } else {
+    inp.value = '';
+    inp.disabled = false;
+    inp.style.display = 'block';
+  }
+}
+
+// Contact form — demo submit
+document.querySelector('.form-submit').addEventListener('click',function(e){
+  e.preventDefault();
+  this.textContent='✓ Request Sent! We\'ll be in touch soon.';
+  this.style.background='linear-gradient(135deg,#059669,#0D9488)';
+  this.disabled=true;
+});
+</script>
+</body>
+</html>
